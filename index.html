@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta chartset="UFT-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="La meta description d'environ 155 caractères doit être ajoutée ici."
+    />
+    <title>Nom de ma page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-header">fastUI🚀</div>
+      <div class="mobile-nav-icon"><i class="fa-solid fa-bars"></i></div>
+    </header>
+    <main class="main-grid">
+      <aside class="aside-nav">
+        <nav>
+          <ul>
+            <li>
+              <a href="#colors"><i class="fa-solid fa-terminal"></i> colors</a>
+            </li>
+            <li>
+              <a href="#buttons"
+                ><i class="fa-solid fa-terminal"></i> buttons</a
+              >
+            </li>
+            <li>
+              <a href="#media-queries"
+                ><i class="fa-solid fa-terminal"></i> media-queries</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="main-grid-item">
+        <div class="flex-container">
+          <div id="colors" class="flex-box">
+            <span class="tittle-box">colors</span>
+            <div class="flex-item square-colors">$color-primary</div>
+            <div class="flex-item square-colors">$color-secondary</div>
+            <div class="flex-item square-colors">$color-tertiary</div>
+            <div class="flex-item square-colors">$color-accent</div>
+            <div class="flex-item square-colors">$color-fwhite</div>
+            <div class="flex-item square-colors">$color-fblack</div>
+            <div class="flex-item square-colors">$color-white</div>
+            <div class="flex-item square-colors">$color-black</div>
+            <div class="flex-item square-colors">$color-sucess</div>
+            <div class="flex-item square-colors">$color-warn</div>
+            <div class="flex-item square-colors">$color-error</div>
+          </div>
+
+          <div class="flex-box" id="buttons">
+            <span class="tittle-box">buttons</span>
+            <div class="flex-item">
+              <button class="btn">class="btn"</button>
+            </div>
+            <div class="flex-item">
+              <button class="btn-out">class="btn-out"</button>
+            </div>
+          </div>
+
+          <div class="flex-box" id="media-queries">
+            <span class="tittle-box">media queries</span>
+            <div class="flex-item">
+              <div class="media-queries-flex-box">
+                <span class="sub-tittle-box media-queries-flex-item">
+                  <i class="fa-solid fa-ruler"></i> breakpoints</span
+                >
+                <span class="media-queries-flex-item">
+                  <span class="highlight">$small</span> landscape phones,
+                  <span class="highlight">576px</span>
+                </span>
+                <span class="media-queries-flex-item">
+                  <span class="highlight">$medium</span> landscape phones,
+                  <span class="highlight">768px</span>
+                </span>
+                <span class="media-queries-flex-item">
+                  <span class="highlight">$large</span> landscape phones,
+                  <span class="highlight">992px</span>
+                </span>
+                <span class="media-queries-flex-item">
+                  <span class="highlight">$xlarge</span> landscape phones,
+                  <span class="highlight">1200px</span>
+                </span>
+                <span class="media-queries-flex-item">
+                  <span class="highlight">$xxlarge</span> landscape phones,
+                  <span class="highlight">1400px</span>
+                </span>
+
+                <!--FIN DU FLEX-BOX-QUERIES-->
+              </div>
+              <!--FIN DU FLEX-ITEM-->
+            </div>
+            <div class="flex-item">
+              <div class="media-queries-flex-box">
+                <span class="sub-tittle-box media-queries-flex-item">
+                  <i class="fa-solid fa-desktop"></i> rules</span
+                >
+                <span class="media-queries-flex-item">
+                  For desktop first, use the suffix
+                  <span class="highlight"> -down </span> at the breakpoint
+                  name.<br />
+                  <span class="console"> @media #{$small-down}{your css} </span>
+                  For mobile first, use the suffix
+                  <span class="highlight"> -up </span> at the breakpoint
+                  name.<br />
+                  <span class="console"> @media #{$small-up}{your css} </span>
+                </span>
+
+                <!--FIN DU FLEX-BOX-QUERIES-->
+              </div>
+              <!--FIN DU FLEX-ITEM-->
+            </div>
+            <!--FIN DU FLEX BOX-->
+          </div>
+
+          <!--FIN DU FLEX-CONTAINER-->
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script
+      src="https://kit.fontawesome.com/6e1d02b60f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+  <footer></footer>
+</html>

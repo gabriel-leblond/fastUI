@@ -1,0 +1,57 @@
+@mixin transform($transform) {
+  transform: $transform;
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  -o-transform: $transform;
+  -moz-transform: $transform;
+}
+
+@mixin rotate($rotation: 10deg) {
+  @include transform(rotate($rotation));
+}
+
+@mixin btn-base($bg-color, $color, $shadow-o) {
+  border-radius: $shape-radius;
+  border: 2px solid $bg-color;
+  cursor: pointer;
+  padding: em(10) em(15);
+  background-color: $bg-color;
+  color: $color;
+  box-shadow: rgba(99, 99, 99, $shadow-o) 0px 2px 8px 0px;
+  font-weight: 500;
+
+  &:hover {
+    background: darken($bg-color, 10);
+    border-color: darken($bg-color, 10);
+  }
+  &:active {
+    background: lighten($bg-color, 10);
+    border-color: lighten($bg-color, 10);
+  }
+}
+
+@mixin btn-base-outline($border-color, $color, $shadow-o) {
+  border-radius: $shape-radius;
+  border: 2px solid $border-color;
+  cursor: pointer;
+  padding: em(10) em(15);
+  box-shadow: rgba(99, 99, 99, $shadow-o) 0px 2px 8px 0px;
+  color: $color;
+  background: transparent;
+  font-weight: 500;
+
+  &:hover {
+    border-color: darken($border-color, 10);
+    color: darken($color, 10);
+  }
+  &:active {
+    border-color: lighten($border-color, 10);
+    color: lighten($color, 10);
+  }
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

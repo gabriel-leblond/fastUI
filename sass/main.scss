@@ -1,0 +1,260 @@
+@import "libs/variable.scss";
+@import "libs/function.scss";
+@import "libs/mixin.scss";
+@import "libs/reset.scss";
+@import "libs/responssive.scss";
+
+body {
+  color: $color-fblack;
+}
+
+header {
+  background-color: $color-fwhite;
+  min-height: em(30);
+
+  .logo-header {
+    font-size: em(22);
+    padding: em(5) em(15);
+    font-weight: 700;
+  }
+  .mobile-nav-icon {
+    position: fixed;
+    top: em(5);
+    right: em(5);
+    @include btn-base-outline($color-accent, $color-accent, 0.1);
+    z-index: 2;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.mobile-nav-icon {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: em(250) 1fr;
+}
+.aside-nav {
+  height: 100vh;
+  background-color: lighten($color-fwhite, 3);
+  position: sticky;
+  top: 0;
+
+  nav {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    ul {
+      margin-top: 20vmin;
+      display: flex;
+      flex-direction: column;
+
+      gap: em(50);
+      li {
+        a {
+          text-decoration: none;
+          color: $color-fblack;
+          font-weight: 600;
+          .fa-solid {
+            color: lighten($color-fblack, 60);
+          }
+        }
+      }
+    }
+  }
+}
+.main-grid-item {
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 15% 0 15%;
+}
+.flex-box {
+  margin: em(15);
+  border-radius: $shape-radius;
+  padding: em(30);
+  display: flex;
+  gap: em(30) em(30);
+  width: fit-content;
+  height: fit-content;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 60px;
+
+  box-shadow: rgba($color: #000000, $alpha: 0.03) em(6) em(6) em(12),
+    rgba($color: #000000, $alpha: 0.03) em(2) em(2) em(3) inset;
+  border: em(1) solid $color-white;
+
+  .tittle-box {
+    position: absolute;
+    top: em(-22);
+    left: em(0);
+    font-size: em(26);
+    color: lighten($color-black, 40);
+    font-weight: 200;
+  }
+  .sub-tittle-box {
+    font-size: em(18);
+    font-weight: 500;
+    display: flex;
+    margin-bottom: em(5);
+    i {
+      color: $color-accent;
+      margin-right: em(5);
+    }
+  }
+
+  .highlight {
+    cursor: pointer;
+    color: $color-accent;
+  }
+}
+
+.flex-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  @include btn-base(
+    $bg-color: $color-primary,
+    $color: $color-white,
+    $shadow-o: 0.2
+  );
+}
+
+.btn-out {
+  @include btn-base-outline(
+    $border-color: $color-primary,
+    $color: $color-primary,
+    $shadow-o: 0.2
+  );
+}
+
+.square-colors {
+  @include flex-center();
+  border-radius: $shape-radius;
+  padding: em(15);
+  height: em(50);
+  color: $color-white;
+  cursor: pointer;
+
+  &:nth-child(2) {
+    background-color: $color-primary;
+  }
+  &:nth-child(3) {
+    background-color: $color-secondary;
+  }
+  &:nth-child(4) {
+    background-color: $color-tertiary;
+  }
+  &:nth-child(5) {
+    background-color: $color-accent;
+  }
+  &:nth-child(6) {
+    background-color: $color-fwhite;
+    color: $color-fblack;
+  }
+  &:nth-child(7) {
+    background-color: $color-fblack;
+  }
+  &:nth-child(8) {
+    background-color: $color-white;
+    color: $color-fblack;
+  }
+  &:nth-child(9) {
+    background-color: $color-black;
+  }
+  &:nth-child(10) {
+    background-color: $color-sucess;
+  }
+  &:nth-child(11) {
+    background-color: $color-warn;
+  }
+  &:nth-child(12) {
+    background-color: $color-error;
+  }
+}
+
+.media-queries-flex-box {
+  display: flex;
+  flex-direction: column;
+  gap: em(15);
+}
+.console {
+  display: flex;
+  background-color: $color-fwhite;
+  border-radius: $shape-radius;
+  margin-top: em(15);
+  margin-bottom: em(15);
+  padding: em(15);
+  font-family: monospace;
+  cursor: pointer;
+}
+.media-queries-flex-item {
+  max-width: em(310);
+}
+
+@media #{$xlarge-down} {
+  body {
+    //background-color: rgb(0, 0, 255);
+  }
+}
+
+@media #{$large-down} {
+  body {
+    //background-color: #7d7dff;
+  }
+  .flex-container {
+    margin: 0 10% 0 10%;
+  }
+  .media-queries-flex-item {
+    max-width: 100%;
+  }
+  #buttons {
+    justify-content: center;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .aside-nav {
+    display: none;
+  }
+  .mobile-nav-icon {
+    opacity: 1;
+  }
+}
+
+@media #{$medium-down} {
+  body {
+    //background-color: rgb(170, 170, 255);
+  }
+  .flex-container {
+    margin: 0 5% 0 5%;
+  }
+}
+
+@media #{$small-down} {
+  body {
+    //background-color: rgb(197, 197, 255);
+  }
+  .flex-container {
+    margin: 0 0 0 0;
+  }
+
+  .square-colors {
+    width: 100%;
+  }
+
+  #buttons {
+    .flex-item {
+      width: 100%;
+    }
+  }
+}
