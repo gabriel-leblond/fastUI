@@ -102,13 +102,55 @@ h6 {
   overflow-wrap: break-word;
 }
 
+html {
+  font-family: sans-serif;
+}
+
+.custom-font-base {
+  font-family: "Poppins";
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+  color: #fe006f;
+  letter-spacing: 100%;
+  font-stretch: 100%;
+  line-height: 100%;
+}
+
+.dynamic-underline {
+  display: inline;
+  cursor: pointer;
+  position: relative;
+}
+
+.dynamic-underline::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1.625em;
+  height: 0.125em;
+  width: 100%;
+  background: #b3b8d0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: right;
+}
+
+.dynamic-underline:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 body {
-  color: #0c0d13;
+  color: #1f2232;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
   background-color: #f1f2f6;
   min-height: 1.875em;
+  display: flex;
+  align-items: center;
 }
 header .logo-header {
   font-size: 1.375em;
@@ -129,6 +171,9 @@ header .mobile-nav-icon {
   font-weight: 500;
   z-index: 2;
   backdrop-filter: blur(10px);
+  background-color: #f1f2f6;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border-radius: 50%;
 }
 header .mobile-nav-icon:hover {
   border-color: #cb0059;
@@ -137,6 +182,33 @@ header .mobile-nav-icon:hover {
 header .mobile-nav-icon:active {
   border-color: #ff328c;
   color: #ff328c;
+}
+
+.mobile-nav-icon-close {
+  position: fixed;
+  top: 0.3125em;
+  right: 0.3125em;
+  border-radius: 5px;
+  border: 2px solid #f1f2f6;
+  cursor: pointer;
+  padding: 0.625em 0.9375em;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  color: #f1f2f6;
+  background: transparent;
+  font-weight: 500;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border-radius: 50%;
+  padding: 0.625em 1em;
+}
+.mobile-nav-icon-close:hover {
+  border-color: #d2d5e2;
+  color: #d2d5e2;
+}
+.mobile-nav-icon-close:active {
+  border-color: white;
+  color: white;
 }
 
 .mobile-nav-icon {
@@ -168,11 +240,11 @@ header .mobile-nav-icon:active {
 }
 .aside-nav nav ul li a {
   text-decoration: none;
-  color: #0c0d13;
+  color: #1f2232;
   font-weight: 600;
 }
 .aside-nav nav ul li a .fa-solid {
-  color: #959bbc;
+  color: #b3b8d0;
 }
 
 .flex-container {
@@ -286,14 +358,14 @@ header .mobile-nav-icon:active {
 }
 .square-colors:nth-child(6) {
   background-color: #f1f2f6;
-  color: #0c0d13;
+  color: #1f2232;
 }
 .square-colors:nth-child(7) {
-  background-color: #0c0d13;
+  background-color: #1f2232;
 }
 .square-colors:nth-child(8) {
   background-color: #fff;
-  color: #0c0d13;
+  color: #1f2232;
 }
 .square-colors:nth-child(9) {
   background-color: #000000;
@@ -330,6 +402,9 @@ header .mobile-nav-icon:active {
 }
 
 @media only screen and (max-width: 992px) {
+  header {
+    min-height: 3.75em;
+  }
   .flex-container {
     margin: 0 10% 0 10%;
   }
@@ -350,7 +425,7 @@ header .mobile-nav-icon:active {
     opacity: 1;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 500) {
   .flex-container {
     margin: 0 5% 0 5%;
   }

@@ -4,15 +4,53 @@
 @import "libs/reset.scss";
 @import "libs/responssive.scss";
 
+.custom-font-base {
+  @include font-custom(
+    $family: "Poppins",
+    $size: em(16),
+    $weight: 400,
+    $style: normal,
+    $color: $color-accent,
+    $n-spacing: 100%,
+    $stretch: 100%,
+    $n-height: 100%
+  );
+}
+
+.dynamic-underline {
+  display: inline;
+  cursor: pointer;
+  position: relative;
+}
+
+.dynamic-underline::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: em(26);
+  height: em(2);
+  width: 100%;
+  background: lighten($color-almost-black, 60);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: right;
+}
+
+.dynamic-underline:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 body {
-  color: $color-fblack;
-  font-family: Arial, Helvetica, sans-serif;
+  color: $color-almost-black;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
-  background-color: $color-fwhite;
+  background-color: $color-almost-white;
   min-height: em(30);
-
+  display: flex;
+  align-items: center;
   .logo-header {
     font-size: em(22);
     padding: em(5) em(15);
@@ -25,7 +63,34 @@ header {
     @include btn-base-outline($color-accent, $color-accent, 0.1);
     z-index: 2;
     backdrop-filter: blur(10px);
+    background-color: $color-almost-white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 50%;
   }
+}
+// .modal-mobile-nav {
+//   position: fixed;
+//   background-color: rgba($color-almost-black, $alpha: 0.95);
+
+//   z-index: 3;
+//   width: 100vw;
+//   height: 100vh;
+
+// }
+
+.mobile-nav-icon-close {
+  position: fixed;
+  top: em(5);
+  right: em(5);
+  @include btn-base-outline($color-almost-white, $color-almost-white, 0.1);
+  z-index: 2;
+  backdrop-filter: blur(10px);
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border-radius: 50%;
+  padding: em(10) em(16);
 }
 
 .mobile-nav-icon {
@@ -37,9 +102,10 @@ header {
   display: grid;
   grid-template-columns: em(250) 1fr;
 }
+
 .aside-nav {
   height: 100vh;
-  background-color: lighten($color-fwhite, 3);
+  background-color: lighten($color-almost-white, 3);
   position: sticky;
   top: 0;
 
@@ -56,10 +122,10 @@ header {
       li {
         a {
           text-decoration: none;
-          color: $color-fblack;
+          color: $color-almost-black;
           font-weight: 600;
           .fa-solid {
-            color: lighten($color-fblack, 60);
+            color: lighten($color-almost-black, 60);
           }
         }
       }
@@ -158,15 +224,15 @@ header {
     background-color: $color-accent;
   }
   &:nth-child(6) {
-    background-color: $color-fwhite;
-    color: $color-fblack;
+    background-color: $color-almost-white;
+    color: $color-almost-black;
   }
   &:nth-child(7) {
-    background-color: $color-fblack;
+    background-color: $color-almost-black;
   }
   &:nth-child(8) {
     background-color: $color-white;
-    color: $color-fblack;
+    color: $color-almost-black;
   }
   &:nth-child(9) {
     background-color: $color-black;
@@ -189,7 +255,7 @@ header {
 }
 .console {
   display: flex;
-  background-color: $color-fwhite;
+  background-color: $color-almost-white;
   border-radius: $shape-radius;
   margin-top: em(15);
   margin-bottom: em(15);
@@ -210,6 +276,10 @@ header {
 @media #{$large-down} {
   body {
     //background-color: #7d7dff;
+  }
+
+  header {
+    min-height: em(60);
   }
   .flex-container {
     margin: 0 10% 0 10%;

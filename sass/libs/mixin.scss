@@ -55,3 +55,26 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin font-custom(
+  $family,
+  $size,
+  $weight,
+  $style,
+  $color,
+  $n-spacing,
+  $stretch,
+  $n-height
+) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  color: $color;
+  letter-spacing: $n-spacing;
+  font-stretch: $stretch;
+  line-height: $n-height;
+}
+
+@mixin dynamic-underline() {
+}
