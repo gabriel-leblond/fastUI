@@ -18,15 +18,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="modal-mobile-nav">
-      <div class="mobile-nav-icon-close">
-        <i class="fa-solid fa-xmark"></i>
+    <div class="mobile-nav">
+      <i class="fa-solid fa-bars mobile-nav-icon"></i>
+      <div class="mobile-nav-modal">
+        <div class="nav-mobile-list">
+          <a href="#colors" class="mobile-nav-likns"
+            ><i class="fa-solid fa-terminal"></i> colors</a
+          >
+          <a href="#buttons" class="mobile-nav-likns"
+            ><i class="fa-solid fa-terminal"></i> buttons</a
+          >
+          <a href="#media-queries" class="mobile-nav-likns"
+            ><i class="fa-solid fa-terminal"></i> media-queries</a
+          >
+        </div>
       </div>
     </div>
 
     <header>
-      <div class="logo-header">fastUI</div>
-      <div class="mobile-nav-icon"><i class="fa-solid fa-bars"></i></div>
+      <div class="logo-header">
+        <span><span class="light">fast</span>UI</span>
+        <img src="/assets/LOGO.svg" alt="" />
+      </div>
     </header>
 
     <main class="main-grid">
@@ -36,12 +49,12 @@
             <li class="dynamic-underline">
               <a href="#colors"><i class="fa-solid fa-terminal"></i> colors</a>
             </li>
-            <li>
+            <li class="dynamic-underline">
               <a href="#buttons"
                 ><i class="fa-solid fa-terminal"></i> buttons</a
               >
             </li>
-            <li>
+            <li class="dynamic-underline">
               <a href="#media-queries"
                 ><i class="fa-solid fa-terminal"></i> media-queries</a
               >

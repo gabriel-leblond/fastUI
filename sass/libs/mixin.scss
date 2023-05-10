@@ -30,14 +30,14 @@
   }
 }
 
-@mixin btn-base-outline($border-color, $color, $shadow-o) {
+@mixin btn-base-outline($border-color, $bg-color, $color, $shadow-o) {
   border-radius: $shape-radius;
   border: 2px solid $border-color;
   cursor: pointer;
   padding: em(10) em(15);
   box-shadow: rgba(99, 99, 99, $shadow-o) 0px 2px 8px 0px;
   color: $color;
-  background: transparent;
+  background: $bg-color;
   font-weight: 500;
 
   &:hover {
@@ -77,4 +77,9 @@
 }
 
 @mixin dynamic-underline() {
+}
+
+@mixin background-color-and-opacity($color, $opacity: 1) {
+  background: $color;
+  background: rgba($color, $opacity);
 }
